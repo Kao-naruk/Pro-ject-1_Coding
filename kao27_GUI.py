@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import messagebox
-import webbrowser
 
 def calculate_relative_atomic_mass(atomic_mass_str):
     try:
@@ -34,15 +33,12 @@ def on_calculate():
         group = determine_group(relative_mass)
         result_label.config(text=f"มวลอะตอมสัมพัทธ์: {relative_mass:.2f}\nธาตุนี้อยู่ใน: {group}")
 
-def open_example():
-    webbrowser.open("https://www.scimath.org/e-books/8293/flippingbook/63/")
-
 # สร้าง GUI
 root = tk.Tk()
 root.title("เครื่องคำนวณมวลอะตอม")
 root.configure(bg="pink")
 
-tk.Label(root, text="ป้อนมวลอะตอม (g):", font=("Arial", 14, "bold"), bg="pink").pack()
+tk.Label(root, text="ป้อนมวลอะตอมที่ผู้ใช้ได้มาจากโจทย์ (g):", font=("Arial", 14, "bold"), bg="pink").pack()
 entry = tk.Entry(root, font=("Arial", 14))
 entry.pack()
 
@@ -52,7 +48,7 @@ result_label.pack()
 
 tk.Label(root, text="** ใส่ค่าเฉพาะ 1 อะตอม เช่น (2.656*10^-23) **", font=("Arial", 12, "bold"), fg="red", bg="pink").pack()
 
-tk.Button(root, text="ดูตัวอย่างโจทย์", command=open_example, font=("Arial", 12), bg="light blue").pack()
-
 root.mainloop()
+
+
 
